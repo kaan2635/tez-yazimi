@@ -1,112 +1,54 @@
-# TezPusulası — Ürün yol haritası
+# Tez Yazım Otomasyonu — Yol Haritası
 
-## Ürün ilkeleri
+Bu yol haritasının hedefi bir proje/ilerleme panosu değil; bilimsel girdileri denetleyen, eksikleri açıkça gösteren ve yalnızca dayanağı bulunan tez bölümleri için taslak hazırlayan bir HTML yazım aracıdır.
 
-1. **Uydurma yok:** Kullanıcı verisinde olmayan hasta özelliği, bulgu, istatistik, etik karar veya kaynak bilgisi oluşturulmaz.
-2. **Kaynak izi:** Akademik iddialar, kaynak kaydına ve metin içi atıfa geri izlenebilir olmalıdır.
-3. **Belirsizlik görünür:** Eksik, onay bekleyen veya yalnızca öneri niteliğindeki alanlar kesin bilgi gibi gösterilmez.
-4. **Mahremiyet varsayılanı:** Kimlik belirleyici hasta verisi uygulamaya alınmaz. Analiz fazından önce saklama, erişim ve anonimleştirme koşulları açıkça tanımlanır.
-5. **Kılavuz önceliği:** Üniversite/bölüm kılavuzu biçim kararlarının tek kaynağıdır; genel şablon onunla çelişirse kılavuz uygulanır.
-6. **İnsan denetimi:** Otomasyon tez danışmanı, etik kurul, istatistik uzmanı veya klinik değerlendirme yerine geçmez.
+## Faz 1 — Yazım stüdyosu ve güvenli bölüm üretimi (mevcut)
 
-## Faz 1 — Proje kurulumu ve gereksinim kaydı
+- [x] Kullanıcının verdiği tez konusu, kurum, klinik, dönem (2016–2025) ve yaş aralığı (0–18) ile başlangıç profili.
+- [x] Araştırma amacı, soruları, yöntem taslağı, evren, dahil/dışlama ölçütleri, etik durumu, kaynakça, doğrulanmış kaynak notları ve bulgular için düzenlenebilir form.
+- [x] Bölüme göre girdi kapıları: analiz edilmiş bulgu olmadan Özet/Bulgular/Tartışma/Sonuç; kaynakça ve kaynak notları olmadan literatür bölümü üretilmez.
+- [x] API anahtarını istemciye koymayan, isteğe bağlı OpenAI-uyumlu sunucu köprüsü; yapılandırma yokken üretim olduğu iddia edilmez.
+- [x] Etik, taslak protokol ve veri eksiklikleri için açık yer tutucu ve uyarılar; bulgu, atıf, kaynak veya istatistik uydurmama talimatları.
+- [x] Üretilen metni düzenleme, bölüm bölüm kopyalama, tamamını kopyalama, Markdown indirme ve JSON taslak içe/dışa aktarma.
+- [x] Otomatik taslak saklama yok; sunucu tez girdilerini diske yazmaz. Kimliksizleştirme uyarısı, yerel dosya okuma ve temel T.C. kimlik numarası taraması.
+- [x] Küçük ekranlara uyumlu Türkçe arayüz, klavye erişimi, başlangıç yol haritası ve yerel testler.
 
-**Durum:** Uygulandı — statik HTML prototipi.
+**Açık sınırlamalar:** Gerçek model üretimi için kullanıcı tarafından sunucuda sağlayıcı/anahtar yapılandırılmalıdır. Etik kurul bilgisi, protokolün nihai ölçütleri, gerçek bulgular ve kaynak tam metin doğrulaması sağlanmamıştır. Uygulama bu bilgileri üretmez. Model/kurum sözleşmesi, klinik veri gizliliği ve akademik uygunluk ayrıca değerlendirilmelidir.
 
-### Kapsam
-- Tez başlığı, derece, alan, kurum, klinik, tarih aralığı ve yaş aralığı.
-- Araştırma konusu, amaç, araştırma sorusu, önerilen tasarım ve izlem durumu.
-- Taslak dahil/dışlama ölçütleri; kesin protokolle uyum uyarısı.
-- Tez yazım kılavuzu bağlantısı, atıf stili ve başlangıç kaynak bağlantıları.
-- Etik kurul ve bulgu alanlarında "kullanıcı tarafından eklenecek / veri bekleniyor" durumu.
-- Temel alan tamamlama göstergesi ve canlı proje özeti.
-- Tarayıcıda yerel kayıt, JSON yedekleme ve profil içe aktarma.
+## Faz 2 — Kaynakların doğrulanabilir yönetimi
 
-### Kabul ölçütleri
-- [x] SBÜ Bursa Yüksek İhtisas EAH / Çocuk Gastroenteroloji / 2016–2025 / 0–18 yaş profili yüklenir.
-- [x] Başlık ve proje alanları düzenlenebilir.
-- [x] Temel alan eksikleri kullanıcıya gösterilir.
-- [x] Sayfa yenilendiğinde yerel kayıt korunur.
-- [x] JSON dışa/içe aktarım çalışır.
-- [x] Hasta verisi yükleme veya sunucuya veri gönderme özelliği yoktur.
-- [x] Bulgu/etik bilgileri üretilmez; kullanıcı girdisi beklediği belirtilir.
-- [x] Dar ekranlarda form ve yol haritası kullanılabilir.
+- DOI, PMID ve URL temelli kaynak içe aktarma; Crossref/PubMed metaverisini kullanıcı onayıyla kaydetme.
+- Kaynak künyesi, erişim tarihi, tam metin ve iddia-notu ilişkisinin ayrı tutulması.
+- Atıfları metindeki ilk geçiş sırasına göre otomatik numaralandırma ve yinelenen/eksik künye uyarıları.
+- Lisans ve erişim kuralları izin verdiğinde kullanıcı tarafından sağlanan kaynak dosyalarından yerel arama; her iddia için sayfa/bölüm dayanağı.
+- Veri tabanından otomatik indirme veya otomatik referans üretme, doğrulanmadıkça kapalı kalmalı.
 
-### Bu fazda olmayanlar
-- Kaynak URL'lerinin otomatik açılması veya DOI/PMID doğrulaması.
-- Akademik literatür taraması ya da LLM ile tez bölümü oluşturma.
-- Ham hasta verisi yükleme, istatistiksel analiz veya klinik öneri.
-- DOCX/PDF tez çıktısı.
+## Faz 3 — Yöntem ve analiz protokolü
 
-## Faz 2 — Kaynak yönetimi ve kanıt matrisi
+- Onaylı protokol sürümünü, etik kurul kararını, tarih ve numarayı kullanıcı girişiyle ekleme.
+- Veri sözlüğü: tanımlar, ölçüm birimleri, eksik veri kodları, birincil/ikincil sonlanımlar ve dahil/dışlama ölçütleri.
+- Önceden belirlenmiş istatistiksel analiz planını, yapılan analizlerden ayırma; tablo/şekil taslaklarını yalnızca sağlanan analiz çıktılarından üretme.
+- Duyarlılık, örneklem ve alt grup sonuçlarını yeterli veri yoksa hesaplamama; çoklu karşılaştırma ve eksik veri sınırlarını bildirme.
 
-**Amaç:** Kaynak bağlantılarını, tam bibliyografik kayıtları ve tez içindeki iddiaları birbirine bağlamak.
+## Faz 4 — Tez biçimlendirme ve dışa aktarım
 
-### Planlanan işlevler
-- DOI, PMID ve URL alanları ile kaynak kayıtları.
-- Dergi, yıl, yazarlar, çalışma türü, örneklem, temel sonuç ve kısıtlılık alanları.
-- DOI/PMID çözümleme ve mümkün olmayan doğrulama durumlarının açıkça işaretlenmesi.
-- Vancouver/SBÜ kılavuzuna göre ilk geçiş sırasına bağlı numaralı atıf listesi.
-- Her yazım iddiası için en az bir kaynak bağlantısı ve kaynak içeriği kontrolü.
-- Kullanıcı tarafından onaylanmamış kaynakları tez metnine dahil etmeme.
+- SBÜ'nün yürürlükteki tez kılavuzunu kullanıcı onayıyla yapılandırılabilir kurallara dönüştürme.
+- Başlık stilleri, sayfa düzeni, yapılandırılmış Türkçe/İngilizce özet ve alfabetik MeSH anahtar kelimeleri için DOCX/PDF dışa aktarımı.
+- Her bölüm için kaynak/kanıt izi, eksik alan listesi ve danışman düzeltmelerini koruyan sürüm karşılaştırması.
+- Kaynakça numaralandırması ile metin içi atıfların çapraz denetimi.
 
-### Kabul ölçütleri
-- Kaynakça kaydı ve metin içi atıf numarası tutarlı kalır.
-- Doğrulanamayan metadata "doğrulanamadı" olarak görünür; tahmin edilmez.
-- Web kaynaklarında erişim tarihi alanı bulunur.
+## Faz 5 — Kurumsal güvenlik ve değerlendirme
 
-## Faz 3 — Yöntem, etik ve veri sözlüğü
+- İnternete açılan dağıtımlarda kullanıcı kimlik doğrulaması, rol tabanlı erişim, şifreli depolama, denetim izi ve kurum onayı.
+- Harici model kullanımında veri işleme sözleşmesi, saklama ve eğitim politikası, bölgesel barındırma ve silme süreci.
+- Hasta verileri için etik kurul/kurumsal güvenlik değerlendirmesi ve gerekiyorsa kurum içinde barındırılan model.
+- Kaynak uydurma, sayısal halüsinasyon, yanlış atıf, klinik yanlış bilgi ve kişisel veri sızıntısı için test kümesi ve düzenli regresyon testi.
+- Üretilmiş metnin özgünlük, şeffaf yapay zekâ bildirimi ve üniversite kuralları açısından danışmanla değerlendirilmesi.
 
-**Amaç:** Araştırma protokolünü veri toplanmadan önce açık ve denetlenebilir hale getirmek.
+## Bilinçli olarak yapılmayanlar
 
-### Planlanan işlevler
-- Çalışma türü, merkez, dönem, evren, olgu seçimi ve dahil/dışlama ölçütleri.
-- Değişken sözlüğü: ad, tanım, veri tipi, birim, izin verilen değerler, kaynak alan ve eksik veri kodu.
-- "Yok", "bilinmiyor", "kayıtta yok" ve "uygulanamaz" değerlerini birbirinden ayırma.
-- Etik kurul tarih/no, kurum izni ve onaylı protokol sürümü için kayıt alanları.
-- STROBE raporlama kontrol listesi.
-- Analiz planı: tanımlayıcı özetler, karşılaştırmalar, eksik veri yaklaşımı ve koşullu modelleme.
-
-### Kabul ölçütleri
-- Yöntem taslağı ile veri sözlüğü çelişmez.
-- Etik kurul/protokol bilgileri boşsa bölüm "tamamlandı" işaretlenmez.
-- Olay sayısı yetersizse regresyon veya alt grup analizi önerisi kesin sonuç gibi sunulmaz.
-
-## Faz 4 — Güvenli veri analizi ve bulgular
-
-**Ön koşul:** Kurum ve etik süreçlerinin belirlediği veri kullanma/onay şartları ile uyumlu kimliksizleştirme. Ham kimlik bilgileri ürün kapsamı dışında kalır.
-
-### Planlanan işlevler
-- Onaylı değişken sözlüğüne göre CSV/XLSX eşleştirme.
-- Şema ve değer aralığı doğrulama; kişisel tanımlayıcı alanlara karşı ön kontrol.
-- Kayıt sayısı, yinelenen olgular, eksik alanlar ve veri sözlüğü uyuşmazlıklarının raporu.
-- Önceden belirlenmiş plana göre tanımlayıcı istatistik ve uygun karşılaştırmalar.
-- Bulgulardan otomatik tablo taslakları; payda ve eksik veri sayısının gösterimi.
-- Analiz kodu, yazılım/sürüm ve dönüşümlerin tekrarlanabilir kayıt altına alınması.
-
-### Kabul ölçütleri
-- Her tablo, analiz edilen olgu sayısını ve eksik veriyi belirtir.
-- Analiz çıktısı kaynak veri veya kod ile izlenebilir.
-- Nedensel ifade, çalışma tasarımının desteklemediği yerde üretilmez.
-- Kullanıcı onayı olmadan bireysel kayıt veya hücre düzeyinde küçük sayılar dışa aktarılmaz.
-
-## Faz 5 — Tez bölümleri, tutarlılık ve çıktı
-
-### Planlanan işlevler
-- SBÜ başlık sırası ve biçim kurallarına göre Türkçe/İngilizce bölümler.
-- Giriş ve genel bilgilerde kaynak destekli iddialar; bulgular bölümünde yalnız analiz edilmiş veriler.
-- Özetin bulgu/sonuçlar kesinleşmeden tamamlanmaması.
-- Başlık, amaç, yöntem, tablolar, tartışma ve sonuç arasında tutarlılık denetimi.
-- Kaynak-atıf eşleşmesi ve eksik/atıfsız akademik iddia taraması.
-- DOCX ve PDF üretimi; sayfa numarası, başlık seviyeleri, içindekiler ve ek kontrolleri.
-- Teslim öncesi kullanıcı/danışman onay listesi.
-
-### Kabul ölçütleri
-- Kaynakçada bulunmayan metin içi atıf ve metinde kullanılmayan kaynaklar raporlanır.
-- Özet ve sonuç bölümleri yalnız kesinleşmiş bulgularla oluşturulur.
-- Kılavuzda belirtilen sayfa ve biçim kısıtları çıktı kontrolünden geçer.
-- Dışa aktarım öncesi taslak/eksik bilgi/insan incelemesi uyarıları gösterilir.
-
-## Sürümleme yaklaşımı
-
-Her faz ayrı bir küçük teslimat olarak geliştirilecek; önceki fazların veri şeması `schemaVersion` ile sürümlenecek. Proje profilini JSON ile dışa/içe aktarma geriye dönük desteklenecek veya değişiklikler açıkça bildirilecek. Yeni fazlar, gerekli gizlilik ve doğrulama ölçütleri tanımlanmadan hasta verisi kabul etmeyecek.
+- Eksik hasta verisi veya sonuçlarını uydurarak bir tezi tamamlanmış gibi gösterme.
+- Etik kurul onayı, örneklem büyüklüğü, analiz, p değeri, tablo ya da kaynak uydurma.
+- Kimlik bilgisi içeren hasta düzeyi veriyi model sağlayıcısına otomatik gönderme.
+- Modelin çıktısını kaynak/doğruluk kontrolü yapılmış akademik metin olarak sunma.
+- API anahtarını tarayıcıya, kaynak koduna veya GitHub'a koyma.
