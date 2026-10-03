@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "project": {
+    "title": "Kolelitiazisli çocuklarda etiyoloji, klinik ve tedavi süreçlerinin değerlendirilmesi",
+    "discipline": "Çocuk Gastroenteroloji",
+    "degreeLevel": "Tıpta uzmanlık tezi",
+    "institution": "Sağlık Bilimleri Üniversitesi Bursa Yüksek İhtisas Eğitim ve Araştırma Hastanesi",
+    "department": "Çocuk Gastroenteroloji Kliniği",
+    "studyPeriod": "2016–2025",
+    "ageRange": "0–18 yaş",
+    "language": "Türkçe",
+    "targetLength": "50–100 sayfa",
+    "researchSubject": "Hastanemiz Çocuk Gastroenteroloji Kliniğinde kolelitiazis tanısı alan çocukların son on yıllık retrospektif değerlendirilmesi.",
+    "researchObjective": "2016–2025 yılları arasında SBÜ Bursa Yüksek İhtisas Eğitim ve Araştırma Hastanesi Çocuk Gastroenteroloji Kliniğinde kolelitiazis tanısıyla değerlendirilen 0–18 yaş aralığındaki çocukların olası etiyolojik/yatkınlaştırıcı faktörlerini, demografik ve klinik özelliklerini, tanı süreçlerini, tedavi yaklaşımlarını ve kayıtlarda bulunan izlem sonuçlarını değerlendirmek.",
+    "researchQuestion": "Belirlenen dönemde kolelitiazis tanısı alan çocukların demografik ve klinik özellikleri, kaydedilmiş olası yatkınlaştırıcı faktörleri, komplikasyonları, uygulanan tedavileri ve mevcut izlem sonuçları nelerdir?",
+    "studyDesign": "Tek merkezli, retrospektif, gözlemsel dosya incelemesi. İzlem sonuçları kayıtlı olduğundan tedavi sonrası klinik seyir ve yeniden başvurular da değerlendirilecektir. Kesin tasarım tanımı etik kurul protokolü ve veri yapısıyla uyumlu hale getirilecektir.",
+    "population": "SBÜ Bursa Yüksek İhtisas Eğitim ve Araştırma Hastanesi Çocuk Gastroenteroloji Kliniğinde 2016–2025 döneminde kolelitiazis tanısıyla değerlendirilen 0–18 yaş aralığındaki çocuklar.",
+    "inclusionCriteria": "TASLAK — 2016–2025 döneminde Çocuk Gastroenteroloji Kliniğinde değerlendirilmiş, tanı anında 0–18 yaş aralığında olan ve kolelitiazis tanısı klinik kayıtlarda doğrulanabilen olgular. Nihai ölçütler onaylı çalışma protokolüyle eşleştirilecektir.",
+    "exclusionCriteria": "TASLAK — Kolelitiazis tanısı doğrulanamayan kayıtlar; yalnız safra çamuru veya izole koledok taşı bulunan olguların ana analizdeki yeri protokolde ayrıca tanımlanacaktır. Eksik izlem verisi tek başına başlangıç özellikleri analizinden dışlama nedeni olarak kabul edilmeyecektir.",
+    "followUpAvailable": "Tanı sonrası izlem, yeniden başvuru ve tedavi sonuçları kayıtlarda mevcut.",
+    "dataStatus": "Hasta verisi henüz bu çalışma alanına aktarılmadı. Bulgular, gerçek ve kimliksizleştirilmiş veri sağlanmadan oluşturulmayacak.",
+    "ethicsStatus": "Etik kurul bilgileri kullanıcı tarafından eklenecek. Tarih ve karar numarası henüz tanımlanmadı.",
+    "guidelineUrl": "https://sbu.edu.tr/FileFolder/Dosyalar/226a44f5/2017_7/tez-yazim-klavuzu-130a0155.pdf",
+    "citationStyle": "SBÜ kılavuzuna göre metinde ilk geçiş sırasına göre numaralı kaynak gösterimi; Vancouver uyumlu kaynakça.",
+    "sourceUrls": [
+      "https://sbu.edu.tr/FileFolder/Dosyalar/226a44f5/2017_7/tez-yazim-klavuzu-130a0155.pdf",
+      "https://doi.org/10.1542/pir.2019-0077",
+      "https://doi.org/10.3390/ijms232113376",
+      "https://doi.org/10.1186/s12876-021-01772-y",
+      "https://doi.org/10.5152/tjg.2014.3907",
+      "https://doi.org/10.1111/jpc.13235",
+      "https://doi.org/10.1097/MEG.0000000000000726",
+      "https://doi.org/10.1177/00099228251372717",
+      "https://doi.org/10.1186/s43066-020-00037-9",
+      "https://doi.org/10.5223/pghn.2020.23.5.430",
+      "https://doi.org/10.48095/ccgh2025458"
+    ],
+    "findings": "",
+    "notes": "Faz 1 yalnızca tez projesi bilgilerini ve gereksinimleri düzenler. Hasta isimleri, protokol numaraları, T.C. kimlik numaraları, doğum tarihleri veya tanınabilir klinik anlatılar bu uygulamaya girilmemelidir."
+  }
+}

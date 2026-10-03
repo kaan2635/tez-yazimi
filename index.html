@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#143f43">
+  <meta name="description" content="TezPusulası — tıpta uzmanlık tezi için proje kurulumu, kaynak takibi ve yazım yol haritası.">
+  <title>TezPusulası — Akademik çalışma alanı</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Ana gezinme">
+      <a class="brand" href="#overview" aria-label="TezPusulası ana sayfa">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M8 11.5 20 6l12 5.5v17L20 34l-12-5.5v-17Z" stroke="currentColor" stroke-width="1.7"/><path d="M14 23.5h12M14 18h12M14 12.5h7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="m26.5 28 2 2 4-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="brand-copy"><strong>TezPusulası</strong><small>Akademik çalışma alanı</small></span>
+      </a>
+
+      <div class="sidebar-label">ÇALIŞMA ALANI</div>
+      <div class="sidebar-project">
+        <span class="project-dot" aria-hidden="true"></span>
+        <div><strong>Uzmanlık tezi</strong><small id="sidebar-project-title">Kolelitiazisli çocuklarda…</small></div>
+        <span class="sidebar-chevron" aria-hidden="true">⌄</span>
+      </div>
+
+      <nav class="side-nav">
+        <a class="nav-link active" href="#overview">
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="4" rx="1.5"/><rect x="13.5" y="10.5" width="7" height="10" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/></svg></span>
+          <span>Genel bakış</span><span class="nav-current" aria-hidden="true"></span>
+        </a>
+        <a class="nav-link" href="#project">
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5h16M4 12h16M4 18.5h10"/><circle cx="7" cy="5.5" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="11" cy="18.5" r="1.5"/></svg></span>
+          <span>Proje bilgileri</span>
+        </a>
+        <a class="nav-link" href="#sources">
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3.75h8l4 4v12.5H6V3.75Z"/><path d="M14 3.75v4h4M9 12h6M9 15.5h6"/></svg></span>
+          <span>Yönerge ve kaynaklar</span>
+        </a>
+        <a class="nav-link" href="#roadmap">
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="12" r="2"/><circle cx="6" cy="19" r="2"/><path d="M8 5h4a4 4 0 0 1 4 4v1M8 19h4a4 4 0 0 0 4-4v-1"/></svg></span>
+          <span>Ürün yol haritası</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-spacer"></div>
+      <div class="phase-sidebar-card">
+        <div class="phase-sidebar-top"><span class="tiny-pulse"></span><span>GELİŞTİRME AŞAMASI</span></div>
+        <strong>Faz 1 <span>·</span> Proje kurulumu</strong>
+        <div class="sidebar-progress"><span></span></div>
+        <small>Temel tez şablonu ve gereksinim kaydı</small>
+      </div>
+      <div class="sidebar-bottom">
+        <span class="avatar">TP</span>
+        <div><strong>Yerel çalışma alanı</strong><small>Tarayıcıda saklanır</small></div>
+        <span class="local-lock" title="Veriler cihazınızda saklanır" aria-label="Yerel kayıt"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v2"/></svg></span>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>Çalışma alanı</span><span class="crumb-divider">/</span><strong>Tez projesi</strong></div>
+        <div class="topbar-actions">
+          <span class="save-indicator" id="save-indicator"><span class="save-dot"></span><span id="save-status">Başlangıç profili yükleniyor</span></span>
+          <button class="button button-outline button-small" id="import-button" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V4M8 8l4-4 4 4M5 17v3h14v-3"/></svg>İçe aktar</button>
+          <button class="button button-outline button-small" id="export-button" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11M8 10.5l4 4 4-4M5 17v3h14v-3"/></svg>Dışa aktar</button>
+          <button class="button button-primary button-small" id="save-button" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h12l2 2v14H5V4Z"/><path d="M8 4v6h8V4M8 20v-6h8v6"/></svg>Kaydet</button>
+        </div>
+      </header>
+
+      <div class="page-wrap">
+        <section class="hero-card" id="overview" aria-labelledby="page-title">
+          <div class="hero-grid-pattern" aria-hidden="true"></div>
+          <div class="hero-content">
+            <div class="eyebrow"><span class="eyebrow-line"></span> TIPTA UZMANLIK TEZİ <span class="eyebrow-separator">/</span> FAZ 1</div>
+            <h1 id="page-title">Tezini sağlam<br><em>bir temele</em> oturt.</h1>
+            <p>Proje kapsamını, yazım kurallarını ve kaynaklarını tek yerde düzenle. Her bölüm doğrulanabilir bilgiye dayansın; eksik veriler açıkça işaretlensin.</p>
+            <div class="hero-actions">
+              <a class="button button-light" href="#project">Proje bilgilerini düzenle <span aria-hidden="true">↗</span></a>
+              <button class="button button-ghost" id="copy-brief-button" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="11" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h2"/></svg>Proje özetini kopyala</button>
+            </div>
+          </div>
+          <div class="hero-side" aria-label="Faz 1 durumu">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+            <div class="hero-orb"><span class="orb-inner"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 14h20l9 9v27H18V14Z"/><path d="M38 14v10h9M24 33h17M24 40h17M24 47h10"/></svg></span></div>
+            <div class="hero-stage"><span class="stage-kicker">ŞİMDİ</span><strong>Proje kurulumu</strong><small>Tez için güvenilir bir başlangıç</small></div>
+            <div class="hero-tag tag-top"><span>01</span> Tanımla</div>
+            <div class="hero-tag tag-bottom"><span>02</span> Kaynaklandır</div>
+          </div>
+        </section>
+
+        <div class="section-title-row overview-title">
+          <div><span class="section-kicker">ÇALIŞMA ÖZETİ</span><h2>Proje panosu</h2></div>
+          <span class="phase-pill"><span></span> Faz 1 aktif</span>
+        </div>
+
+        <section class="metrics-grid" aria-label="Proje özeti">
+          <article class="metric-card metric-highlight">
+            <div class="metric-top"><span class="metric-icon metric-icon-teal"><svg viewBox="0 0 24 24"><path d="M5 4.5h14v15H5zM8 8h8M8 12h8M8 16h5"/></svg></span><span class="metric-label">ÇALIŞMA DÖNEMİ</span></div>
+            <strong id="metric-period">2016–2025</strong><small>10 yıllık retrospektif değerlendirme</small>
+          </article>
+          <article class="metric-card">
+            <div class="metric-top"><span class="metric-icon metric-icon-sand"><svg viewBox="0 0 24 24"><path d="M12 3 4.5 7v5c0 4.5 3.2 7.6 7.5 9 4.3-1.4 7.5-4.5 7.5-9V7L12 3Z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="metric-label">TASARIM</span></div>
+            <strong class="metric-text" id="metric-design">Retrospektif</strong><small>Tek merkezli gözlemsel dosya incelemesi</small>
+          </article>
+          <article class="metric-card">
+            <div class="metric-top"><span class="metric-icon metric-icon-lilac"><svg viewBox="0 0 24 24"><path d="M4 20V8l8-4 8 4v12M8 20v-6h8v6M8 10h.01M12 10h.01M16 10h.01"/></svg></span><span class="metric-label">MERKEZ</span></div>
+            <strong class="metric-text" id="metric-center">SBÜ Bursa Yüksek İhtisas</strong><small id="metric-department">Çocuk Gastroenteroloji Kliniği</small>
+          </article>
+          <article class="metric-card metric-progress-card">
+            <div class="metric-top"><span class="metric-icon metric-icon-coral"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></svg></span><span class="metric-label">PROJE PROFİLİ</span></div>
+            <div class="progress-line-wrap"><strong id="metric-completion">0%</strong><span id="metric-fields">0 / 10 temel alan</span></div>
+            <div class="progress-track"><span id="completion-bar"></span></div>
+            <small>Temel bilgiler tamamlandıkça güncellenir</small>
+          </article>
+        </section>
+
+        <section class="work-section" id="project">
+          <div class="section-title-row">
+            <div><span class="section-kicker">PROJE TANIMI</span><h2>Tez çalışma alanı</h2><p>Bilgileri bölüm bölüm tamamla. Taslak ve proje özeti bu tarayıcıda saklanır.</p></div>
+            <span class="draft-badge"><span class="draft-dot"></span> Çalışma taslağı</span>
+          </div>
+
+          <div class="work-grid">
+            <section class="form-card" aria-label="Tez proje bilgileri">
+              <div class="card-header">
+                <div><h3>Proje bilgileri</h3><p>Çalışmanın ana çerçevesi</p></div>
+                <span class="card-step">01 <span>/ 05</span></span>
+              </div>
+              <div class="tab-list" role="tablist" aria-label="Proje bilgi bölümleri">
+                <button class="tab-button active" type="button" role="tab" aria-selected="true" aria-controls="panel-basics" id="tab-basics" data-tab="basics">Temel bilgiler</button>
+                <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="panel-research" id="tab-research" data-tab="research">Araştırma planı</button>
+                <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="sources" id="tab-sources" data-tab="sources">Yönerge &amp; kaynaklar</button>
+              </div>
+
+              <form id="project-form" autocomplete="off">
+                <div class="tab-panel active" role="tabpanel" id="panel-basics" aria-labelledby="tab-basics" data-panel="basics">
+                  <div class="field-block field-block-wide">
+                    <label for="title">Tez başlığı <span class="required-mark">*</span></label>
+                    <input class="form-control" id="title" name="title" type="text" required>
+                  </div>
+                  <div class="field-grid">
+                    <div class="field-block"><label for="degreeLevel">Derece düzeyi</label><input class="form-control" id="degreeLevel" name="degreeLevel" type="text"></div>
+                    <div class="field-block"><label for="discipline">Alan / uzmanlık dalı</label><input class="form-control" id="discipline" name="discipline" type="text"></div>
+                  </div>
+                  <div class="field-block"><label for="institution">Kurum <span class="required-mark">*</span></label><input class="form-control" id="institution" name="institution" type="text" required></div>
+                  <div class="field-block"><label for="department">Klinik / bölüm <span class="required-mark">*</span></label><input class="form-control" id="department" name="department" type="text" required></div>
+                  <div class="field-grid">
+                    <div class="field-block"><label for="studyPeriod">Çalışma dönemi <span class="required-mark">*</span></label><input class="form-control" id="studyPeriod" name="studyPeriod" type="text" required><small>Örn. 2016–2025</small></div>
+                    <div class="field-block"><label for="ageRange">Yaş aralığı <span class="required-mark">*</span></label><input class="form-control" id="ageRange" name="ageRange" type="text" required></div>
+                  </div>
+                  <div class="field-grid">
+                    <div class="field-block"><label for="language">Tez dili</label><input class="form-control" id="language" name="language" type="text"></div>
+                    <div class="field-block"><label for="targetLength">Hedef uzunluk</label><input class="form-control" id="targetLength" name="targetLength" type="text"></div>
+                  </div>
+                </div>
+
+                <div class="tab-panel" role="tabpanel" id="panel-research" aria-labelledby="tab-research" data-panel="research" hidden>
+                  <div class="field-block"><label for="researchSubject">Araştırma konusu</label><textarea class="form-control" id="researchSubject" name="researchSubject" rows="3"></textarea></div>
+                  <div class="field-block"><label for="researchObjective">Amaç</label><textarea class="form-control" id="researchObjective" name="researchObjective" rows="4"></textarea><small>Amaç, yalnızca paylaşılan araştırma bilgileriyle tanımlanır.</small></div>
+                  <div class="field-block"><label for="researchQuestion">Temel araştırma sorusu</label><textarea class="form-control" id="researchQuestion" name="researchQuestion" rows="3"></textarea></div>
+                  <div class="field-block"><label for="studyDesign">Önerilen çalışma tasarımı</label><textarea class="form-control" id="studyDesign" name="studyDesign" rows="4"></textarea><small>Taslak yöntemdir; etik kurul protokolü ve gerçek veri yapısıyla uyumlu olmalıdır.</small></div>
+                  <div class="field-grid">
+                    <div class="field-block"><label for="inclusionCriteria">Dahil edilme ölçütleri</label><textarea class="form-control" id="inclusionCriteria" name="inclusionCriteria" rows="4"></textarea></div>
+                    <div class="field-block"><label for="exclusionCriteria">Dışlama ölçütleri</label><textarea class="form-control" id="exclusionCriteria" name="exclusionCriteria" rows="4"></textarea></div>
+                  </div>
+                  <div class="field-block"><label for="followUpAvailable">İzlem bilgisi</label><textarea class="form-control" id="followUpAvailable" name="followUpAvailable" rows="2"></textarea></div>
+                  <div class="field-block"><label for="dataStatus">Veri / bulgu durumu</label><textarea class="form-control" id="dataStatus" name="dataStatus" rows="2"></textarea></div>
+                  <div class="field-block"><label for="findings">Bulgular için notlar</label><textarea class="form-control" id="findings" name="findings" rows="3" placeholder="Gerçek ve kimliksizleştirilmiş veriler sağlanana kadar boş bırakın."></textarea><small>Faz 1 bulgu üretmez; bu alan yalnızca daha sonra kullanıcı tarafından sağlanan, kimliksizleştirilmiş veriler için not alanıdır.</small></div>
+                </div>
+
+                <div class="tab-panel" role="tabpanel" id="sources" aria-labelledby="tab-sources" data-panel="sources" hidden>
+                  <div class="field-block"><label for="guidelineUrl">Üniversite / bölüm yazım yönergesi</label><input class="form-control" id="guidelineUrl" name="guidelineUrl" type="url"><small>Bağlantı proje profiline kaydedilir; bu sürüm bağlantıyı otomatik taramaz.</small></div>
+                  <div class="field-block"><label for="citationStyle">Atıf stili</label><textarea class="form-control" id="citationStyle" name="citationStyle" rows="2"></textarea></div>
+                  <div class="field-block"><label for="ethicsStatus">Etik kurul bilgisi</label><textarea class="form-control" id="ethicsStatus" name="ethicsStatus" rows="3"></textarea><small>Karar tarihi ve numarası kullanıcı tarafından, gerçek onay belgesine göre eklenecek.</small></div>
+                  <div class="field-block"><label for="sourceUrls">Kaynak bağlantıları <span class="field-hint">Her satıra bir URL</span></label><textarea class="form-control source-textarea" id="sourceUrls" name="sourceUrls" rows="9" spellcheck="false"></textarea><small>Başlangıç kaynakları düzenlenebilir. Kaynak doğrulaması ve kaynakça üretimi sonraki fazın kapsamındadır.</small></div>
+                  <div class="field-block"><label for="notes">Proje notları</label><textarea class="form-control" id="notes" name="notes" rows="3"></textarea></div>
+                </div>
+
+                <div class="form-footer">
+                  <span class="form-footer-note"><span class="required-mark">*</span> Temel proje alanları</span>
+                  <div class="form-footer-actions"><button class="button button-text" id="reset-button" type="button">Başlangıç profiline dön</button><button class="button button-primary" type="button" id="save-button-bottom">Değişiklikleri kaydet <span aria-hidden="true">→</span></button></div>
+                </div>
+              </form>
+            </section>
+
+            <aside class="right-rail">
+              <section class="readiness-card">
+                <div class="readiness-heading"><span class="section-kicker">BAŞLANGIÇ DURUMU</span><span class="readiness-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></span></div>
+                <h3><span id="readiness-count">0/10</span> temel alan hazır</h3>
+                <p>Bu kontrol yalnızca proje tanımını gösterir; bilimsel onay veya etik kurul onayı anlamına gelmez.</p>
+                <div class="progress-track progress-track-large"><span id="readiness-bar"></span></div>
+                <ul class="check-list" id="check-list" aria-label="Eksik temel proje alanları"></ul>
+                <div class="readiness-divider"></div>
+                <div class="pending-row"><span class="pending-icon">○</span><span>Etik kurul bilgisi</span><span class="status-pending">Bekliyor</span></div>
+                <div class="pending-row"><span class="pending-icon">○</span><span>Veri ve bulgular</span><span class="status-pending">Bekliyor</span></div>
+              </section>
+
+              <section class="privacy-card">
+                <div class="privacy-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v2"/></svg></div>
+                <div><h3>Hasta verisi için güvenli sınır</h3><p>Faz 1 sunucuya veri göndermez; proje bilgileri bu tarayıcıda saklanır. Hasta adı, protokol numarası, T.C. kimlik numarası, doğum tarihi veya tanınabilir klinik veri eklemeyin.</p></div>
+              </section>
+
+              <section class="preview-card">
+                <div class="preview-header"><div><span class="section-kicker">CANLI ÖZET</span><h3>Proje özeti</h3></div><button class="icon-button" id="copy-brief-small" type="button" title="Özeti kopyala" aria-label="Proje özetini kopyala"><svg viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h2"/></svg></button></div>
+                <div class="preview-title" id="preview-title">Tez başlığı yükleniyor…</div>
+                <div class="preview-meta"><span class="preview-meta-icon"><svg viewBox="0 0 24 24"><path d="M5 4.5h14v15H5zM8 8h8M8 12h8M8 16h5"/></svg></span><span id="preview-meta-text">Dönem ve merkez yükleniyor</span></div>
+                <div class="preview-meta"><span class="preview-meta-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></svg></span><span id="preview-design">Çalışma tasarımı</span></div>
+                <div class="preview-rule"></div>
+                <p class="preview-aim" id="preview-aim">Amaç bilgisi yükleniyor…</p>
+                <span class="local-only-label"><span></span> Bu cihazda saklanıyor</span>
+              </section>
+            </aside>
+          </div>
+        </section>
+
+        <section class="roadmap-section" id="roadmap">
+          <div class="section-title-row roadmap-heading">
+            <div><span class="section-kicker">ÜRÜN YOL HARİTASI</span><h2>Tezden teslimata</h2><p>Her faz, doğrulanabilir girdiler ve açık kalite kontrolleriyle ilerler.</p></div>
+            <span class="roadmap-caption">5 faz <span>·</span> kademeli geliştirme</span>
+          </div>
+          <div class="roadmap-list">
+            <article class="roadmap-item roadmap-current">
+              <div class="roadmap-marker"><span>01</span></div>
+              <div class="roadmap-body"><div class="roadmap-item-top"><span class="roadmap-phase-label">FAZ 1</span><span class="roadmap-status status-active">Şu an</span></div><h3>Proje kurulumu &amp; gereksinimler</h3><p>Tez kimliği, çalışma dönemi, amaç, yazım kılavuzu ve kaynak başlangıç listesini kaydet. Eksik veya henüz onaylanmamış alanları görünür tut.</p><div class="roadmap-tags"><span>Proje profili</span><span>Yerel kayıt</span><span>JSON içe/dışa aktarım</span></div></div>
+              <div class="roadmap-state-icon complete-icon"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></div>
+            </article>
+            <article class="roadmap-item">
+              <div class="roadmap-marker"><span>02</span></div>
+              <div class="roadmap-body"><div class="roadmap-item-top"><span class="roadmap-phase-label">FAZ 2</span><span class="roadmap-status">Planlandı</span></div><h3>Kaynak yönetimi &amp; kanıt matrisi</h3><p>DOI/PMID ve bağlantı doğrulama, çalışma türü ve temel bulguların kaydı, metin içi atıf numaralarının otomatik takibi.</p><div class="roadmap-tags"><span>DOI / PMID</span><span>Vancouver</span><span>Kaynak izlenebilirliği</span></div></div>
+              <div class="roadmap-state-icon"><svg viewBox="0 0 24 24"><path d="M6 12h12M12 6v12"/></svg></div>
+            </article>
+            <article class="roadmap-item">
+              <div class="roadmap-marker"><span>03</span></div>
+              <div class="roadmap-body"><div class="roadmap-item-top"><span class="roadmap-phase-label">FAZ 3</span><span class="roadmap-status">Planlandı</span></div><h3>Yöntem &amp; veri sözlüğü</h3><p>Dahil etme/dışlama ölçütleri, değişken tanımları, eksik veri kodları, etik bilgisi ve analiz planını yapılandır.</p><div class="roadmap-tags"><span>Protokol</span><span>Veri sözlüğü</span><span>Gizlilik kontrolü</span></div></div>
+              <div class="roadmap-state-icon"><svg viewBox="0 0 24 24"><path d="M6 12h12M12 6v12"/></svg></div>
+            </article>
+            <article class="roadmap-item">
+              <div class="roadmap-marker"><span>04</span></div>
+              <div class="roadmap-body"><div class="roadmap-item-top"><span class="roadmap-phase-label">FAZ 4</span><span class="roadmap-status">Planlandı</span></div><h3>Veri analizi &amp; bulgular</h3><p>Yalnızca sağlanan ve kimliksizleştirilmiş veri üzerinden tabloları ve istatistiksel özetleri üret; belirsiz veya eksik kayıtları uydurmak yerine işaretle.</p><div class="roadmap-tags"><span>CSV / XLSX</span><span>İstatistik</span><span>Tablo üretimi</span></div></div>
+              <div class="roadmap-state-icon"><svg viewBox="0 0 24 24"><path d="M6 12h12M12 6v12"/></svg></div>
+            </article>
+            <article class="roadmap-item roadmap-last">
+              <div class="roadmap-marker"><span>05</span></div>
+              <div class="roadmap-body"><div class="roadmap-item-top"><span class="roadmap-phase-label">FAZ 5</span><span class="roadmap-status">Planlandı</span></div><h3>Tez yazımı, tutarlılık &amp; dışa aktarım</h3><p>Bölümleri kaynaklara ve bulgulara bağla; çapraz tutarlılık, kaynakça ve SBÜ biçim kontrollerinden sonra DOCX/PDF çıktısı hazırla.</p><div class="roadmap-tags"><span>Bölüm taslakları</span><span>Kalite kontrolü</span><span>DOCX / PDF</span></div></div>
+              <div class="roadmap-state-icon"><svg viewBox="0 0 24 24"><path d="M6 12h12M12 6v12"/></svg></div>
+            </article>
+          </div>
+        </section>
+
+        <footer class="page-footer"><span>TezPusulası <span class="footer-dot">·</span> Faz 1 prototipi</span><span>Yerel ön yüz <span class="footer-dot">·</span> Sunucuya hasta verisi gönderilmez</span></footer>
+      </div>
+    </main>
+  </div>
+
+  <input id="import-file" type="file" accept="application/json,.json" hidden>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
